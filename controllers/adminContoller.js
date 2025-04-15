@@ -1,7 +1,8 @@
 const e = require('cors');
 const rooms = require('../models/addRoomModels');
 const users = require('../models/userModel');
-// add rooms
+const Booking = require('../models/bookings');
+// add rooms 
 
 exports.addRoomController = async (req, res) => {
     console.log("Inside addRoomController");
@@ -92,7 +93,7 @@ exports.getAllUsersController = async (req, res) => {
 
 exports.getAllBookingsController = async (req, res) => {
     try {
-        const allBookings = await Booking.find().populate('userId', 'username email').populate('roomId', 'name rent type');
+        const allBookings = await Booking.find()
         res.status(200).json(allBookings);
     } catch (error) {
         console.error("Error in getAllBookingsController:", error);

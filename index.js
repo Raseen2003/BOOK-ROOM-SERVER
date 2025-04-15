@@ -12,7 +12,7 @@ rbServer.use(router)
 rbServer.use('/uploads',express.static('./uploads'))
 
 
-const PORT =3000 || process.env.PORT
+const PORT =3001 || process.env.PORT
 
 rbServer.listen(PORT,()=>{
     console.log(`Project fair server started at port : ${PORT} and waiting for client request!!!`);
